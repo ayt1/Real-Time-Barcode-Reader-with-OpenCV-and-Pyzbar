@@ -23,6 +23,7 @@ def readBarcodes(frame,list):
             barcodeType = barcode.type
             text = "{} ({})".format(barcodeText, barcodeType)
             cv2.putText(img, text, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX,0.5, (0, 0, 255), 2)
+            # check if the detected barcode is duplicate
             for i in range(len(list)):                
                 if list[i] == text:
                     duplicate = True
